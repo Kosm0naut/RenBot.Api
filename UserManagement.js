@@ -4,7 +4,7 @@
         connection = require('./Connections.js'),
         db;
 
-    module.export.getUsers = function (req, res) {
+    module.exports.getUsers = function (req, res) {
         db = connection.exportDbConnection();
         if (db !== null) {
             db.collection('user').find().toArray(function (err, items) {
@@ -19,7 +19,7 @@
         }
     };
 
-    module.export.getUserById = function (req, res) {
+    module.exports.getUserById = function (req, res) {
         db = connection.exportDbConnection();
         var id = req.params.id;
         if (db !== null) {
@@ -35,7 +35,7 @@
         }
     };
 
-    module.export.getUserByName = function (req, res) {
+    module.exports.getUserByName = function (req, res) {
         db = connection.exportDbConnection();
         var userName = req.params.name;
         if (db !== null) {
@@ -51,7 +51,7 @@
         }
     };
 
-    module.export.getLatestScoreFromUserId = function (req, res) {
+    module.exports.getLatestScoreFromUserId = function (req, res) {
         db = connection.exportDbConnection();
         var id = req.params.id;
         if (db !== null) {
@@ -67,7 +67,7 @@
         }
     };
 
-    module.export.getUserTopScoresFromUserId = function (req, res) {
+    module.exports.getUserTopScoresFromUserId = function (req, res) {
         db = connection.exportDbConnection();
         var id = req.params.id;
         if (db !== null) {
@@ -83,7 +83,7 @@
         }
     };
 
-    module.export.deleteUserById = function (req, res) {
+    module.exports.deleteUserById = function (req, res) {
         db = connection.exportDbConnection();
         var id = req.params.id;
         if (db !== null) {
@@ -99,7 +99,7 @@
         }
     };
 
-    module.export.deleteUserByName = function (req, res) {
+    module.exports.deleteUserByName = function (req, res) {
         db = connection.exportDbConnection();
         var playerName = req.params.name;
         if (db !== null) {
