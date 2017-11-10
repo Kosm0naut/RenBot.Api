@@ -6,7 +6,8 @@
   "dependencies": {
     "express": "^4.16.2",
     "jslint": "^0.11.0",
-    "promise": "^8.0.1"
+    "promise": "^8.0.1",
+    "mongodb": "^2.2.33"
   },
   "devDependencies": {},
   "scripts": {
