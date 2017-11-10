@@ -5,7 +5,9 @@
         db;
 
     module.exports.getUsers = function (req, res) {
-        db = connection.exportDbConnection();
+        connection.exportDbConnection(function (res) {
+            db = res;
+        });
         if (db !== null) {
             db.collection('user').find().toArray(function (err, items) {
                 if (err) {
@@ -20,7 +22,9 @@
     };
 
     module.exports.getUserById = function (req, res) {
-        db = connection.exportDbConnection();
+        connection.exportDbConnection(function (res) {
+            db = res;
+        });
         var id = req.params.id;
         if (db !== null) {
             db.collection('user').find({"_id": id}).toArray(function (err, items) {
@@ -36,7 +40,9 @@
     };
 
     module.exports.getUserByName = function (req, res) {
-        db = connection.exportDbConnection();
+        connection.exportDbConnection(function (res) {
+            db = res;
+        });
         var userName = req.params.name;
         if (db !== null) {
             db.collection('user').find({"name": {$regex: new RegExp(userName, "i") }}).toArray(function (err, items) {
@@ -52,7 +58,9 @@
     };
 
     module.exports.getLatestScoreFromUserId = function (req, res) {
-        db = connection.exportDbConnection();
+        connection.exportDbConnection(function (res) {
+            db = res;
+        });
         var id = req.params.id;
         if (db !== null) {
             db.collection('user').find({"_id": id}).toArray(function (err, items) {
@@ -68,7 +76,10 @@
     };
 
     module.exports.getUserTopScoresFromUserId = function (req, res) {
-        db = connection.exportDbConnection();
+        connection.exportDbConnection(function (res) {
+            db = res;
+        });
+        console.log("starting5");
         var id = req.params.id;
         if (db !== null) {
             db.collection('user').find({"_id": id}).toArray(function (err, items) {
@@ -84,7 +95,9 @@
     };
 
     module.exports.deleteUserById = function (req, res) {
-        db = connection.exportDbConnection();
+        connection.exportDbConnection(function (res) {
+            db = res;
+        });
         var id = req.params.id;
         if (db !== null) {
             db.collection('user').deleteOne({"_id": id}, function (err, result) {
@@ -100,7 +113,9 @@
     };
 
     module.exports.deleteUserByName = function (req, res) {
-        db = connection.exportDbConnection();
+        connection.exportDbConnection(function (res) {
+            db = res;
+        });
         var playerName = req.params.name;
         if (db !== null) {
             db.collection('user').deleteOne({"name": {$regex: new RegExp(playerName, "i")}}, function (err, result) {
