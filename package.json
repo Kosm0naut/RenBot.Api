@@ -1,0 +1,30 @@
+{
+  "name": "botapi",
+  "version": "1.0.0",
+  "description": "api for renbot",
+  "main": "Main.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jslint": "^0.11.0",
+    "promise": "^8.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kosm0naut/RenBotApi.git"
+  },
+  "keywords": [
+    "ren",
+    "bot",
+    "api"
+  ],
+  "author": "Kosm0naut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kosm0naut/RenBotApi/issues"
+  },
+  "homepage": "https://github.com/Kosm0naut/RenBotApi#readme"
+}
