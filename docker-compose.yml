@@ -3,7 +3,7 @@ db:
   ports:
     - 27017
 api:
-  build: ./RenBotApi/
+  build: ../RenBotApi/
 web:
   build: .
   volumes:
