@@ -12,7 +12,6 @@
                     reject(err);
                 } else {
                     fullfill(database);
-                    console.log("Connected to the database");
                 }
             });
         });

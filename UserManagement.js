@@ -67,7 +67,7 @@
                 if (err) {
                     res.send(err);
                 } else {
-                    res.send(items.recentScore);
+                    res.send(items[0].recentScore);
                 }
             });
         } else {
@@ -79,14 +79,13 @@
         connection.exportDbConnection(function (res) {
             db = res;
         });
-        console.log("starting5");
         var id = req.params.id;
         if (db !== null) {
             db.collection('user').find({"_id": id}).toArray(function (err, items) {
                 if (err) {
                     res.send(err);
                 } else {
-                    res.send(items.topScores);
+                    res.send(items[0].topScores);
                 }
             });
         } else {

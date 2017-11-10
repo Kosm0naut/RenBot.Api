@@ -8,7 +8,7 @@
     function main() {
         connection.loginToDatabase()
             .then(function (res) {
-                console.log(res);
+                console.log("Connected to the database");
             }, function (err) {
                 console.log(err);
             });
